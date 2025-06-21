@@ -1,4 +1,4 @@
-#include "run_Izhikevich_On_NW.h"
+#include "classRunIzhikevichOnNW.hpp"
 
   //PRIVATE
    // double a_default = {5    0.02  10   10}; //{RS IB CH FS}
