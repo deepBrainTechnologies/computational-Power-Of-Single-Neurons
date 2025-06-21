@@ -7,22 +7,30 @@
     //double d_default = { 8   4    2    2};
     // struct settings.
 
-    void set_settings(int mode);
+    void set_settings(struct settings);
+    void set_abcd();
     void run_izhikevich();
     void write_to_outfile();
     void load_data_chunk();
 
   //PUBLIC
 
+    /* void set_settings(struct settings)   */
+    void classRunIzhikevichOnNW::set_settings(struct_settings settings)
+    {
+      myObj.settings = settings;
+      myObj.set_abcd;
+    }
+
     /* 
         CONSTRUCTOR run_Izhikevich_On_NW
         ask and release memory for outResults buffer, set setting, initialize
       */
-    void run_Izhikevich_On_NW::run_Izhikevich_On_NW(settings) 
+    void classRunIzhikevichOnNW::classRunIzhikevichOnNW(settings) 
     {
-
+        myObj.set_settings(settings);
     }
-    void run_Izhikevich_On_NW::run_algorithm()
+    void classRunIzhikevichOnNW::run_algorithm()
     {
       
     }
