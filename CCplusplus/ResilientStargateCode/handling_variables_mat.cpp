@@ -24,19 +24,36 @@ int createVariable(string varName, typeOfVar Type, size_t varSize)
       case DOUBLE
         baseSize = sizeof(double);
       }
-
+    void* ptrVariable;
     ptrVariable = malloc(baseSize);
-    saveVariableToWorkspace(VarName,ptrVariable,varType,varSize);
+    addVariableToWorkspace(outDirFile,outVarFile,VarName,ptrVariable,varType,varSize);
     // void* = malloc(size_t Size); //size_t is a HW dependant atomic size. (Unsigned int). ex: 32 or 64 bits
     
 }
 
-void saveVariableToWorkspace(VarName,ptrVariable,varType,varSize)
+
+void cleanWorkSpace()
+{  //release all the memory from all the variables creates still in workspace
+
+  int reading=1;
+  while(reading)
+  {
+    //return pointers saved into outDirFile and frees allocated memory
+    void* varRead;
+    varRead = returnVariablesPointersFromWorkspace(outDirFile,outVarFile); //returns the variable Ptr
+    //without deleting the files since we want to keep record of runing the code
+    // and variable files are named as: basename_time_date_varName or alike
+    free(varRead);
+  }
+}
+
+//returns pointer to variable in workspace(dir file) and frees memory
+// without deleting the files.
+int deleteVariable(string varName)
 {
-    lineToAdd = sprintf('%s \t %l \t %d \t %d \n');
-    addLineToFile(outVarFile,lineToAdd)
-
-
+    void* varRead;
+    varRead = returnVarDataPointerFromWorkspace(outDirFile,outVarFile,VarName); 
+    free(varRead);
 }
 
 
