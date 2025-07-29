@@ -5,7 +5,7 @@
 PLOT_DEBUG = true;
 
 INFOLDER = 'd:/SIMULATIONS_OUTPUT/PAPERS/Model2_3DelayLines_ionChans/';
-SUBFOLDERS = {'/UNIFORM/','EXPONENTIAL/','GAUSSIAN/'};
+SUBFOLDERS = {'/X11_UNIFORM/','/X11_EXPONENTIAL/','/X11_GAUSSIAN/'};
 
 Entropy_ALL = [];RT_period_ALL=[]; maxJitter_ALL=[];
 
@@ -33,3 +33,28 @@ for pdf_folder=1:1:length(SUBFOLDERS)
   
   cd('..')
 end %for each PDF folder
+
+
+
+fig1 = figure;
+plot3(Entropy_ALL, maxJitter_ALL, RT_period_ALL,'.k','markersize',10); 
+grid on;xlabel('entropy'); ylabel('maxJitter [steps]'); ...
+zlabel('RS period [us]');
+
+saveas(fig1,[INFOLDER '/figure_paper_X11_Entropy_vs_RTperiod_MaxJitter_ALLsims.png']);
+
+close all;
+fig1 = figure;
+plot(Entropy_ALL, maxJitter_ALL,'.k','markersize',10); 
+grid on;xlabel('entropy'); ylabel('maxJitter [steps]'); ...
+
+saveas(fig1,[INFOLDER '/figure_paper_X11_Entropy_vs_MaxJitter_ALLsims.png']);
+
+
+close all;
+fig1 = figure;
+plot(Entropy_ALL, RT_period_ALL,'.k','markersize',10); 
+grid on;xlabel('entropy'); ylabel('RS period [us]'); ...
+
+saveas(fig1,[INFOLDER '/figure_paper_X11_Entropy_vs_RTperiod_ALLsims.png']);
+
