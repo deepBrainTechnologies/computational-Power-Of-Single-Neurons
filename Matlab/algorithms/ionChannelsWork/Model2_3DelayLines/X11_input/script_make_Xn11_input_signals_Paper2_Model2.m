@@ -51,7 +51,7 @@ maxJitter = floor(RT_steps*jittFact);
 %-- generate Jitter for each nPulses ... jitter PDF: Uniform Distribution
 
 %--------------------------------------------------------------------------
-SUBFOLDER = '/UNIFORM/';         
+SUBFOLDER = '/X11_UNIFORM/';         
 jitterValues = classRandomNumbersGenerator.uniform(false,...
                                       nPulsesTotal, minJitter, maxJitter);
 jitterValues = round(jitterValues);
@@ -80,7 +80,7 @@ simulink_X11_timeseries = [dtSim:dtSim:dtSim*size(X11_signalJitter_binary,2); X1
 save(  [DESTDIR 'X11_simulink_signal.mat'],'simulink_X11_timeseries');
 
 %--------------------------------------------------------------------------
-SUBFOLDER = '/EXPONENTIAL/';                                    
+SUBFOLDER = '/X11_EXPONENTIAL/';                                    
 jitterValues = classRandomNumbersGenerator.exponential(false,...
                                       nPulsesTotal,maxJitter/3);
 jitterValues = round(jitterValues+1);
@@ -104,7 +104,7 @@ save([DESTDIR 'X11_RSsignal_jitter_of_PDF.mat' ],...
     'maxJitter','minJitter','PDFtype');
 
 %--------------------------------------------------------------------------
-SUBFOLDER = '/GAUSSIAN/';        
+SUBFOLDER = '/X11_GAUSSIAN/';        
 mu_Jitter = 0;
 sigma_Jitter = (maxJitter*2);
 jitterValues = classRandomNumbersGenerator.gaussian(false,nPulsesTotal, ...
