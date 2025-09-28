@@ -1,5 +1,5 @@
 /*
-*    ---------- public class configClass ------------
+*    ---------- public class configClass  (structure)------------
 *    DeepBrainTechnologies fundamentals and foundations:
 *        --configuration rules and determines architecture
 *        --1 class must have 1 constructor driven by config received.
