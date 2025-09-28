@@ -8,11 +8,11 @@
 public class configDevClass{
   //properties ----------------------------------
   public int nDev;
-  public int[] identifier; //identifier of each device example: 0002 0005 0045 0046 (range indicates type)
+  public int[] identifiers; //identifier of each device example: 0002 0005 0045 0046 (range indicates type)
 
   //methods -------------------------------------
   public configDevClass(int nDev){
     this.nDev = nDev;
-    this.identifier = new int[nDev];
+    this.identifiers = new int[nDev];
   }
 }
