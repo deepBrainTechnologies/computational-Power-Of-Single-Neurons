@@ -7,7 +7,7 @@
 */
 public class configClass{
   public int nDevices
-  public configDevClass devices;   //configuration of devices to monitor (files, usbs, IoT, tcp, etc)
-  public configWinsClass windows;  //configuration of windows to display
+  public configDevClass confDevs;   //configuration of devices to monitor (files, usbs, IoT, tcp, etc)
+  public configWinsClass confWindows;  //configuration of windows to display
 
 }
