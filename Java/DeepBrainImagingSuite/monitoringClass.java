@@ -30,7 +30,7 @@ public class monitoringClass{
   private void addListOfDevices(){
     this.nDev = this.config.devices.nDevices;
     for (int devIX=1; devIX<this.nDev; devIX++){
-        this.devices.addDevice(devIX, this.config.devices.identifier[devIX], this.config.devices);
+        this.devices.addDevice(devIX, this.config.confDevs.identifiers[devIX], this.config.confDevs);
     } 
   }
 
