@@ -27,14 +27,14 @@ public class monitoringClass{
   }
 
   //private methods ---------------------------------
-  private void addListOfDevices(void){
+  private void addListOfDevices(){
     this.nDev = this.config.devices.nDevices;
     for (int devIX=1; devIX<this.nDev; devIX++){
         this.devices.addDevice(this.config.devices.identifier[devIX]);
     } 
   }
 
-  private void startMonitoringDevices(void){
+  private void startMonitoringDevices(){
     for (int devIX=1; devIX<this.nDev; devIX++){
         this.devices.startDevice(devIX);
     } 
